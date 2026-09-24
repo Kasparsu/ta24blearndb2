@@ -1,9 +1,9 @@
 services:
   web:
-    build: 
+    build:
       context: .
       dockerfile: dockerfile
-    ports: 
+    ports:
       - 9000:80
     volumes:
       - ./html:/usr/local/apache2/htdocs
@@ -13,6 +13,7 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: project
     volumes:
       - ta24blearndb2dbdata:/var/lib/mysql
     ports:
